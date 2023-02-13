@@ -1,7 +1,8 @@
 import 'dart:io';
-import 'package:flutter_apns_example/flutter_apns/src/apns_connector.dart';
-import 'package:flutter_apns_example/flutter_apns/src/connector.dart';
-import 'package:flutter_apns_example/flutter_apns/src/firebase_connector.dart';
+
+import 'src/apns_connector.dart';
+import 'src/connector.dart';
+import 'src/firebase_connector.dart';
 
 /// Creates either APNS or Firebase connector to manage the push notification registration.
 PushConnector createPushConnector() {
