@@ -41,12 +41,19 @@ if #available(iOS 11.0, *) {
 import 'package:flutter_apnsX/flutter_apns/flutter_apns_only_x.dart';
 
 final connector = createPushConnector();
-connector.configure(
-    onLaunch: _onLaunch,
-    onResume: _onResume,
-    onMessage: _onMessage,
-);
-connector.requestNotificationPermissions()
+
+  connector.configureApns(
+    onLaunch: (data) => onPush('onResume', data.payload.values.single),
+    onResume: (data) => onPush('onResume', data.payload.values.single),
+    onMessage: (data) => onPush('onResume', data.payload.values.single),
+    onBackgroundMessage: (data) => onPush('onMessage', data.payload.values.single,)
+  );
+  //requestNotificationPermissions//
+  connector.requestNotificationPermissions()
+  //token value get//
+  connector.token.addListener(() {
+      print('Token ${connector.token.value}');
+  });
 ```
 6. Build on device and test your solution using Firebase Console (Android) and CURL (iOS, see [How to run example app on iOS](#how-to-run-example-app-on-ios)).
 
