@@ -1,6 +1,5 @@
 name: flutter_apns_x
 description: Demonstrates how to use the flutter_apnsX plugin.
-publish_to: https://pub.dartlang.org
 version: 0.0.1
 homepage: https://github.com/Money1998/custom_apnsX.git
 
