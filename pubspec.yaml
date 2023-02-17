@@ -1,6 +1,6 @@
 name: flutter_apnsX
-description: Demonstrates how to use the flutter_apns plugin.
-publish_to: "none"
+description: Demonstrates how to use the flutter_apnsX plugin.
+publish_to: https://github.com/Money1998/custom_apnsX.git
 version: 1.0.0+1
 
 environment:
@@ -14,9 +14,8 @@ dependencies:
   path_provider:
   flutter_local_notifications:
   plugin_platform_interface: ^2.1.3
-  firebase_core: ^2.5.0
+  firebase_core: ^2.6.0
   firebase_messaging: ^14.2.2
-  flutter_apns_only: ^1.6.0
 
 dev_dependencies:
   flutter_test:
@@ -26,7 +25,3 @@ flutter:
   uses-material-design: true
 
 dependency_overrides:
-  # flutter_apns_only:
-  # path: ../flutter_apns_only
-#  flutter_apns:
-#    path: ../flutter_apns

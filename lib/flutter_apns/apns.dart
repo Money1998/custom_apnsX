@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'src/apns_connector.dart';
 import 'src/connector.dart';
 import 'src/firebase_connector.dart';

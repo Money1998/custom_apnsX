@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'flutter_apns/flutter_apns.dart';
-import 'flutter_apns/flutter_apns_only_x.dart';
+import 'package:flutter_apnsX/flutter_apns/flutter_apns_x.dart';
 import 'storage.dart';
 
 Future<void> main() async {

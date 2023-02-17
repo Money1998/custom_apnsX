@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../flutter_apns.dart';
+import '../flutter_apns_x.dart';
 
 class FirebasePushConnector extends PushConnector {
   late final firebase = FirebaseMessaging.instance;
