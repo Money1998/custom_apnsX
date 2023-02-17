@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_apnsX/flutter_apns/flutter_apns_x.dart';
+import 'package:flutter_apns_x/flutter_apns/flutter_apns_x.dart';
 import 'storage.dart';
 
 Future<void> main() async {
@@ -39,31 +39,30 @@ class _MyAppState extends State<MyApp> {
 
     connector.requestNotificationPermissions();
 
-    if (connector is ApnsPushConnectorOnly) {
-      connector.shouldPresent = (x) async {
-        final remote = RemoteMessage.fromMap(x.payload);
-        return remote.category == 'MEETING_INVITATION';
-      };
-      connector.setNotificationCategories([
-        UNNotificationCategory(
-          identifier: 'MEETING_INVITATION',
-          actions: [
-            UNNotificationAction(
-              identifier: 'ACCEPT_ACTION',
-              title: 'Accept',
-              options: UNNotificationActionOptions.values,
-            ),
-            UNNotificationAction(
-              identifier: 'DECLINE_ACTION',
-              title: 'Decline',
-              options: [],
-            ),
-          ],
-          intentIdentifiers: [],
-          options: UNNotificationCategoryOptions.values,
-        ),
-      ]);
-    }
+    connector.shouldPresent = (x) async {
+      final remote = RemoteMessage.fromMap(x.payload);
+      return remote.category == 'MEETING_INVITATION';
+    };
+
+    connector.setNotificationCategories([
+      UNNotificationCategory(
+        identifier: 'MEETING_INVITATION',
+        actions: [
+          UNNotificationAction(
+            identifier: 'ACCEPT_ACTION',
+            title: 'Accept',
+            options: UNNotificationActionOptions.values,
+          ),
+          UNNotificationAction(
+            identifier: 'DECLINE_ACTION',
+            title: 'Decline',
+            options: [],
+          ),
+        ],
+        intentIdentifiers: [],
+        options: UNNotificationCategoryOptions.values,
+      ),
+    ]);
   }
 
   @override
