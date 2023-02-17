@@ -1,7 +1,7 @@
 name: flutter_apnsX
 description: Demonstrates how to use the flutter_apnsX plugin.
 publish_to: https://github.com/Money1998/custom_apnsX.git
-version: 1.0.0+1
+version: 0.0.1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
